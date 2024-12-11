@@ -1,0 +1,29 @@
+---
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+
+  - repo: local
+    hooks:
+      - id: prettier
+        name: Prettier
+        language: node
+        entry: prettier
+        args: [--write, --ignore-unknown]
+        types: [file]
+        additional_dependencies:
+          - prettier@3.4.2
+
+  - repo: https://github.com/ansible/ansible-lint
+    rev: v24.12.1
+    hooks:
+      - id: ansible-lint
+        additional_dependencies:
+          - ansible
