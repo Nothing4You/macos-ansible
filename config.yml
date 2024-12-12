@@ -1,0 +1,5 @@
+- name: Configure macOS
+  hosts: localhost
+  connection: local
+  roles:
+    - macos_homebrew

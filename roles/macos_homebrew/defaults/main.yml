@@ -1,0 +1,31 @@
+macos_homebrew_prefix_arm64: /opt/homebrew
+macos_homebrew_formulae:
+  - curl
+  - dos2unix
+  - htop
+  - iproute2mac
+  - jq
+  - lftp
+  - mtr
+  - ncdu
+  - opentofu
+  - prettier
+  - proxychains-ng
+  - qemu
+  - qrencode
+  - rclone
+  - ripgrep
+  - rsync
+  - ruff
+  - rustup
+  - shellcheck
+  - speedtest-cli
+  - sqlite
+  - testssl
+  - tmux
+  - watch
+  - ykman
+  - ykpers
+  - yt-dlp
+  - yubico-piv-tool
+  - zstd

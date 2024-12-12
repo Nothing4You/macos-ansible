@@ -1,0 +1,22 @@
+- name: Check if Homebrew binary exists
+  ansible.builtin.stat:
+    path: "{{ lookup('vars', 'macos_homebrew_prefix_' + ansible_machine) }}/bin/brew"
+  register: macos_homebrew_binary
+
+- name: Install Homebrew
+  ansible.builtin.command:
+    argv:
+      - /bin/bash
+      - -c
+      - $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
+  when: not macos_homebrew_binary.stat.exists
+  changed_when: true
+
+- name: Update Homebrew and all installed packages
+  community.general.homebrew:
+    update_homebrew: true
+    upgrade_all: true
+
+- name: Install formulae
+  community.general.homebrew:
+    name: "{{ macos_homebrew_formulae }}"
