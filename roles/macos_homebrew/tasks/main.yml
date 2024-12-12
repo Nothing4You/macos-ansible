@@ -12,11 +12,20 @@
   when: not macos_homebrew_binary.stat.exists
   changed_when: true
 
-- name: Update Homebrew and all installed packages
+- name: Update Homebrew and all installed formulae
   community.general.homebrew:
+    update_homebrew: true
+    upgrade_all: true
+
+- name: Update all installed casks
+  community.general.homebrew_cask:
     update_homebrew: true
     upgrade_all: true
 
 - name: Install formulae
   community.general.homebrew:
     name: "{{ macos_homebrew_formulae }}"
+
+- name: Install casks
+  community.general.homebrew_cask:
+    name: "{{ macos_homebrew_casks }}"

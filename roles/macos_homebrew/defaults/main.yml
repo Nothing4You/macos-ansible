@@ -29,3 +29,25 @@ macos_homebrew_formulae:
   - yt-dlp
   - yubico-piv-tool
   - zstd
+macos_homebrew_casks:
+  - bettertouchtool
+  - blockblock
+  - db-browser-for-sqlite
+  - firefox
+  - gimp
+  - google-chrome
+  - inkscape
+  - iterm2
+  - keepassxc
+  - knockknock
+  - mitmproxy
+  - obs
+  - oversight
+  - powershell
+  - rectangle
+  - utm
+  - visual-studio-code
+  - vlc
+  - whatsyoursign
+  - wireshark
+  - xca
