@@ -1,19 +1,36 @@
 macos_homebrew_prefix_arm64: /opt/homebrew
 macos_homebrew_formulae:
+  - asciinema
   - curl
+  - diffr
   - dos2unix
+  - exiftool
+  - gawk
+  - git
+  - git-lfs
+  - gnu-sed
+  - gnupg
+  - go
+  - hashcat
   - htop
+  - iperf
+  - iperf3
   - iproute2mac
   - jq
   - lftp
+  - masscan
+  - mercurial
   - mtr
   - ncdu
   - opentofu
+  - pdm
+  - pngcrush
   - prettier
   - proxychains-ng
   - qemu
   - qrencode
   - rclone
+  - rename
   - ripgrep
   - rsync
   - ruff
@@ -22,13 +39,19 @@ macos_homebrew_formulae:
   - speedtest-cli
   - sqlite
   - testssl
+  - tinyproxy
   - tmux
   - watch
   - ykman
   - ykpers
   - yt-dlp
   - yubico-piv-tool
+  - zimg
   - zstd
+macos_homebrew_formulae_work:
+  - awscli
+  - azcopy
+  - azure-cli
 macos_homebrew_casks:
   - bettertouchtool
   - blockblock
@@ -36,8 +59,10 @@ macos_homebrew_casks:
   - firefox
   - gimp
   - google-chrome
+  - gpg-suite
   - inkscape
   - iterm2
+  - jetbrains-toolbox
   - keepassxc
   - knockknock
   - mitmproxy
@@ -51,3 +76,11 @@ macos_homebrew_casks:
   - whatsyoursign
   - wireshark
   - xca
+macos_homebrew_casks_work:
+  - 1password
+  - 1password-cli
+  - apache-directory-studio
+  - microsoft-edge
+  - microsoft-office
+  - microsoft-teams
+  - signal
