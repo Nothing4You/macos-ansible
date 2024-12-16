@@ -1,16 +1,17 @@
-- name: Check if Homebrew binary exists
-  ansible.builtin.stat:
-    path: "{{ lookup('vars', 'macos_homebrew_prefix_' + ansible_machine) }}/bin/brew"
-  register: macos_homebrew_binary
+# install is broken, needs investigation. for now, just install via shell script.
+# - name: Check if Homebrew binary exists
+#   ansible.builtin.stat:
+#     path: "{{ lookup('vars', 'macos_homebrew_prefix_' + ansible_machine) }}/bin/brew"
+#   register: macos_homebrew_binary
 
-- name: Install Homebrew
-  ansible.builtin.command:
-    argv:
-      - /bin/bash
-      - -c
-      - $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
-  when: not macos_homebrew_binary.stat.exists
-  changed_when: true
+# - name: Install Homebrew
+#   ansible.builtin.command:
+#     argv:
+#       - /bin/bash
+#       - -c
+#       - $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
+#   when: not macos_homebrew_binary.stat.exists
+#   changed_when: true
 
 - name: Update Homebrew and all installed formulae
   community.general.homebrew:
