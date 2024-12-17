@@ -28,6 +28,9 @@ fi
 echo "Installing ansible in virtual environment"
 "$venv_path/bin/pip" install --upgrade ansible ansible-core
 
+echo "Installing ansible galaxy resources"
+"$venv_path/bin/ansible-galaxy" install -r requirements.yml
+
 if ! command -v brew > /dev/null 2>&1
 then
   echo "Installing homebrew"

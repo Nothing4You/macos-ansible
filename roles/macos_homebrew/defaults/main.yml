@@ -3,6 +3,7 @@ macos_homebrew_formulae:
   - asciinema
   - curl
   - diffr
+  - dockutil
   - dos2unix
   - exiftool
   - gawk

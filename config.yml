@@ -3,3 +3,29 @@
   connection: local
   roles:
     - macos_homebrew
+    - role: geerlingguy.mac.dock
+      vars:
+        # issue
+        dockutil_install: false
+        dockitems_remove:
+          - Launchpad
+          - Safari
+          - Messages
+          - Mail
+          - Maps
+          - Photos
+          - FaceTime
+          - Calendar
+          - Contacts
+          - Reminders
+          - Notes
+          - Freeform
+          - TV
+          - Music
+          - App Store
+          - System Settings
+        dockitems_persist:
+          - name: iTerm
+            path: /Applications/iTerm.app/
+          - name: Firefox
+            path: /Applications/Firefox.app/
