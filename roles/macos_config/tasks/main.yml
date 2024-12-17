@@ -1,0 +1,7 @@
+# this only takes effect on the next login
+- name: Configure showing recent apps section in dock
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: show-recents
+    type: bool
+    value: "{{ macos_config_dock_show_recents }}"
