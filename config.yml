@@ -3,6 +3,7 @@
   connection: local
   roles:
     - macos_homebrew
+    - macos_config
     - role: geerlingguy.mac.dock
       vars:
         # issue
