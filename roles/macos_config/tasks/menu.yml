@@ -1,0 +1,6 @@
+- name: Configure showing seconds in clock
+  community.general.osx_defaults:
+    domain: com.apple.menuextra.clock
+    key: ShowSeconds
+    type: bool
+    value: "{{ macos_config_menu_clock_show_seconds }}"

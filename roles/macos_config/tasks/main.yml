@@ -1,7 +1,13 @@
-# this only takes effect on the next login
-- name: Configure showing recent apps section in dock
+# most settings changes only take effect on the next login or application restart
+- name: Include Dock tasks
+  ansible.builtin.include_tasks: dock.yml
+
+- name: Include menu tasks
+  ansible.builtin.include_tasks: menu.yml
+
+- name: Configure dark mode
   community.general.osx_defaults:
-    domain: com.apple.dock
-    key: show-recents
-    type: bool
-    value: "{{ macos_config_dock_show_recents }}"
+    domain: NSGlobalDomain
+    key: AppleInterfaceStyle
+    type: string
+    value: "{{ macos_config_enable_dark_mode }}"

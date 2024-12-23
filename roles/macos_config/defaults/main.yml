@@ -1,1 +1,4 @@
+macos_config_dock_autohide: true
 macos_config_dock_show_recents: false
+macos_config_menu_clock_show_seconds: true
+macos_config_apple_interface_style: Dark
