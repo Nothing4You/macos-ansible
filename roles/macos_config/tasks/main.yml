@@ -10,4 +10,4 @@
     domain: NSGlobalDomain
     key: AppleInterfaceStyle
     type: string
-    value: "{{ macos_config_enable_dark_mode }}"
+    value: "{{ macos_config_apple_interface_style }}"
