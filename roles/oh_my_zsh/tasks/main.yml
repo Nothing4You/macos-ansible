@@ -20,6 +20,7 @@
   check_mode: true
   register: oh_my_zsh_installed
 
+# TODO: Installer won't work if the install folder already exists
 - name: Install oh-my-zsh
   ansible.builtin.command:
     argv:
