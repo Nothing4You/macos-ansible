@@ -1,0 +1,27 @@
+- name: Clone oh-my-zsh repository
+  ansible.builtin.git:
+    repo: "{{ oh_my_zsh_repo }}"
+    version: "{{ oh_my_zsh_repo_branch }}"
+    dest: "{{ oh_my_zsh_install_dir }}"
+    depth: 1
+    single_branch: true
+    accept_newhostkey: true
+    update: true
+  register: oh_my_zsh_clone
+
+- name: Check if oh-my-zsh is installed
+  ansible.builtin.lineinfile:
+    name: "{{ oh_my_zsh_zshrc }}"
+    line: >-
+      export ZSH="{{ oh_my_zsh_install_dir }}"
+    state: present
+  check_mode: true
+  register: oh_my_zsh_installed
+  failed_when: (oh_my_zsh_installed is changed) or (oh_my_zsh_installed is failed)
+
+- name: Install oh-my-zsh
+  ansible.builtin.command:
+    argv:
+      - "{{ oh_my_zsh_installer }}"
+  changed_when: true
+  when: not oh_my_zsh_installed is changed

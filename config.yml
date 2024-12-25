@@ -4,6 +4,7 @@
   roles:
     - macos_homebrew
     - macos_config
+    - oh_my_zsh
     - role: geerlingguy.mac.dock
       vars:
         # issue
