@@ -17,7 +17,6 @@
     state: present
   check_mode: true
   register: oh_my_zsh_installed
-  failed_when: (oh_my_zsh_installed is changed) or (oh_my_zsh_installed is failed)
 
 - name: Install oh-my-zsh
   ansible.builtin.command:
