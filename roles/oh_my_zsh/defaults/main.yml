@@ -1,5 +1,5 @@
 oh_my_zsh_repo: https://github.com/robbyrussell/oh-my-zsh.git
 oh_my_zsh_repo_branch: master
 oh_my_zsh_install_dir: "{{ ansible_user_dir }}/.oh-my-zsh"
-oh_my_zsh_installer: "{{ oh_my_zsh_install_dir }}/tools/installer.sh"
+oh_my_zsh_installer: "{{ oh_my_zsh_install_dir }}/tools/install.sh"
 oh_my_zsh_zshrc: "{{ ansible_user_dir }}/.zshrc"
