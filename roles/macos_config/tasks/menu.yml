@@ -4,3 +4,41 @@
     key: ShowSeconds
     type: bool
     value: "{{ macos_config_menu_clock_show_seconds }}"
+
+- name: Configure NSStatusItem Visible Bluetooth
+  community.general.osx_defaults:
+    domain: com.apple.controlcenter
+    key: NSStatusItem Visible Bluetooth
+    type: boolean
+    value: true
+
+- name: Configure Bluetooth in ControlCenter
+  community.general.osx_defaults:
+    domain: com.apple.controlcenter
+    key: Bluetooth
+    type: integer
+    value: 18
+    host: currentHost
+
+- name: Configure BatteryShowPercentage
+  community.general.osx_defaults:
+    domain: com.apple.controlcenter
+    key: BatteryShowPercentage
+    type: boolean
+    value: true
+    host: currentHost
+
+- name: Configure NSStatusItem Visible Item-0 for Spotlight
+  community.general.osx_defaults:
+    domain: com.apple.Spotlight
+    key: NSStatusItem Visible Item-0
+    type: boolean
+    value: true
+
+- name: Configure MenuItemHidden for Spotlight
+  community.general.osx_defaults:
+    domain: com.apple.Spotlight
+    key: MenuItemHidden
+    type: boolean
+    value: false
+    host: currentHost
