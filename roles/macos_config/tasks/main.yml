@@ -8,6 +8,9 @@
 - name: Include trackpad tasks
   ansible.builtin.include_tasks: trackpad.yml
 
+- name: Include keyboard tasks
+  ansible.builtin.include_tasks: keyboard.yml
+
 - name: Configure dark mode
   community.general.osx_defaults:
     domain: NSGlobalDomain
@@ -15,16 +18,9 @@
     type: string
     value: "{{ macos_config_apple_interface_style }}"
 
-- name: Configure fn key
-  community.general.osx_defaults:
-    domain: com.apple.HIToolbox
-    key: AppleFnUsageType
-    type: integer
-    value: 0
-
-- name: Configure keyboard navigation
+- name: Configure closing windows when quitting an application
   community.general.osx_defaults:
     domain: NSGlobalDomain
-    key: AppleKeyboardUIMode
-    type: integer
-    value: 2
+    key: NSQuitAlwaysKeepsWindows
+    type: boolean
+    value: true

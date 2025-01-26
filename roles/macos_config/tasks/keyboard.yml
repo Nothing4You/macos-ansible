@@ -1,0 +1,55 @@
+- name: Configure fn key
+  community.general.osx_defaults:
+    domain: com.apple.HIToolbox
+    key: AppleFnUsageType
+    type: integer
+    value: 0
+
+- name: Configure keyboard navigation
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleKeyboardUIMode
+    type: integer
+    value: 2
+
+- name: Configure NSAutomaticSpellingCorrectionEnabled
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticSpellingCorrectionEnabled
+    type: boolean
+    value: false
+
+- name: Configure WebAutomaticSpellingCorrectionEnabled
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: WebAutomaticSpellingCorrectionEnabled
+    type: boolean
+    value: false
+
+- name: Configure NSAutomaticCapitalizationEnabled
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticCapitalizationEnabled
+    type: boolean
+    value: false
+
+- name: Configure NSAutomaticPeriodSubstitutionEnabled
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticPeriodSubstitutionEnabled
+    type: boolean
+    value: false
+
+- name: Configure NSAutomaticDashSubstitutionEnabled
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticDashSubstitutionEnabled
+    type: boolean
+    value: false
+
+- name: Configure NSAutomaticQuoteSubstitutionEnabled
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticQuoteSubstitutionEnabled
+    type: boolean
+    value: false
