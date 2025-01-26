@@ -40,5 +40,5 @@
     domain: com.apple.Spotlight
     key: MenuItemHidden
     type: boolean
-    value: false
+    value: true
     host: currentHost
