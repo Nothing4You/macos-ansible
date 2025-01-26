@@ -81,6 +81,7 @@ macos_homebrew_casks_work:
   - 1password
   - 1password-cli
   - apache-directory-studio
+  - little-snitch
   - microsoft-edge
   - microsoft-office
   - microsoft-teams
