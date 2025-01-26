@@ -1,0 +1,28 @@
+- name: Configure force click and haptic feedback
+  community.general.osx_defaults:
+    domain: com.apple.AppleMultitouchTrackpad
+    key: ForceSuppressed
+    type: bool
+    value: true
+
+- name: Configure force click and haptic feedback
+  community.general.osx_defaults:
+    domain: com.apple.AppleMultitouchTrackpad
+    key: ActuateDetents
+    type: integer
+    value: 0
+
+- name: Configure trackpad preferences in multiple domains
+  ansible.builtin.include_tasks: trackpad-loop.yml
+  loop_control:
+    loop_var: domain
+  loop:
+    - com.apple.AppleMultitouchTrackpad
+    - com.apple.driver.AppleBluetoothMultitouch.trackpad
+
+- name: Configure Launchpad gesture
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: showLaunchpadGestureEnabled
+    type: bool
+    value: 0

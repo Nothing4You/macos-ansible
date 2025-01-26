@@ -1,0 +1,27 @@
+- name: "Configure look up & data detectors in {{ domain }}"
+  community.general.osx_defaults:
+    domain: "{{ domain }}"
+    key: TrackpadThreeFingerTapGesture
+    type: integer
+    value: 0
+
+- name: "Configure trackpad corner secondary click in {{ domain }}"
+  community.general.osx_defaults:
+    domain: "{{ domain }}"
+    key: TrackpadCornerSecondaryClick
+    type: integer
+    value: 2
+
+- name: "Configure trackpad right click in {{ domain }}"
+  community.general.osx_defaults:
+    domain: "{{ domain }}"
+    key: TrackpadRightClick
+    type: bool
+    value: false
+
+- name: "Configure Notification Center gesture in {{ domain }}"
+  community.general.osx_defaults:
+    domain: "{{ domain }}"
+    key: TrackpadTwoFingerFromRightEdgeSwipeGesture
+    type: integer
+    value: 0

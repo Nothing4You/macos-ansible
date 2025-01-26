@@ -5,9 +5,33 @@
 - name: Include menu tasks
   ansible.builtin.include_tasks: menu.yml
 
+- name: Include trackpad tasks
+  ansible.builtin.include_tasks: trackpad.yml
+
 - name: Configure dark mode
   community.general.osx_defaults:
     domain: NSGlobalDomain
     key: AppleInterfaceStyle
     type: string
     value: "{{ macos_config_apple_interface_style }}"
+
+- name: Configure fn key
+  community.general.osx_defaults:
+    domain: com.apple.HIToolbox
+    key: AppleFnUsageType
+    type: integer
+    value: 0
+
+- name: Configure keyboard navigation
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleKeyboardUIMode
+    type: integer
+    value: 2
+
+- name: Configure NSStatusItem Visible Bluetooth
+  community.general.osx_defaults:
+    domain: com.apple.controlcenter
+    key: NSStatusItem Visible Bluetooth
+    type: boolean
+    value: true
