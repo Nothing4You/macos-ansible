@@ -25,7 +25,9 @@ macos_homebrew_formulae:
   - ncdu
   - opentofu
   - pdm
+  - pipx
   - pngcrush
+  - pre-commit
   - prettier
   - proxychains-ng
   - qemu
@@ -57,6 +59,7 @@ macos_homebrew_casks:
   - bettertouchtool
   - blockblock
   - db-browser-for-sqlite
+  - dbeaver-community
   - firefox
   - gimp
   - google-chrome
@@ -71,12 +74,20 @@ macos_homebrew_casks:
   - oversight
   - powershell
   - rectangle
+  - signal
   - utm
   - visual-studio-code
   - vlc
   - whatsyoursign
   - wireshark
   - xca
+macos_homebrew_casks_personal:
+  - ferdium
+  - lulu
+  - nextcloud
+  - nheko
+  - tor-browser
+  - thunderbird
 macos_homebrew_casks_work:
   - 1password
   - 1password-cli
@@ -85,4 +96,3 @@ macos_homebrew_casks_work:
   - microsoft-edge
   - microsoft-office
   - microsoft-teams
-  - signal

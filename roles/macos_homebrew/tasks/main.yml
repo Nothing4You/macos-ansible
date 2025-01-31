@@ -18,6 +18,20 @@
     update_homebrew: true
     upgrade_all: true
 
+- name: Add personal apps to install list
+  ansible.builtin.set_fact:
+    # macos_homebrew_formulae: >-
+    #   {{
+    #     (macos_homebrew_formulae + macos_homebrew_formulae_work)
+    #     | unique
+    #   }}
+    macos_homebrew_casks: >-
+      {{
+        (macos_homebrew_casks + macos_homebrew_casks_personal)
+        | unique
+      }}
+  when: env | default == "personal"
+
 - name: Add work apps to install list
   ansible.builtin.set_fact:
     macos_homebrew_formulae: >-
